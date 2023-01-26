@@ -72,8 +72,10 @@ namespace WindowsFormsApp1
                 clickers = clickers + 1;
                 cookies = cookies - clickercost;
                 ClickerCost.Text = clickers.ToString();
-                clickercost = pastclickercost * 2 + pastclickercost;
+                clickercost = pastclickercost * 2 + 25;
                 ClickerAmount.Text = clickercost.ToString();
+                pastclickercost = clickercost;
+                
                
 
             }
