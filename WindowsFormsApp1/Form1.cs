@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (cookies >= 50){
+            if (cookies >= clickercost){
                 clickers = clickers + 1;
                 cookies = cookies - clickercost;
                 ClickerCost.Text = clickers.ToString();
