@@ -17,11 +17,22 @@ namespace WindowsFormsApp1
 
     public partial class Form1 : Form
     {
+        private void UpdateLabels()
+        {
+            ClickerCostLabel.Text = gameState.clickerCost.ToString();
+            ClickerAmountLabel.Text = gameState.clickerTotal.ToString();
+            FactoryCostLabel.Text = gameState.factoryCost.ToString();
+            FactoryAmountLabel.Text = gameState.factoryTotal.ToString();
+            WormholeCostLabel.Text = gameState.wormholeCost.ToString();
+            WormholeAmountLabel.Text = gameState.wormholeTotal.ToString();
+            label1.Text = gameState.cookieTotal.ToString();
+        }
         GameState gameState = new GameState();
 
         public Form1()
         {
             InitializeComponent();
+            UpdateLabels();
 
 
         }
@@ -69,9 +80,9 @@ namespace WindowsFormsApp1
             //}
             if (gameState.CanBuy(gameState.clickerCost))
             {
+                gameState.cookieTotal = gameState.cookieTotal - gameState.clickerCost;
                 gameState.clickerTotal= gameState.clickerTotal + 1;
-                ClickerCostLabel.Text= gameState.clickerCost.ToString();
-                ClickerAmountLabel.Text= gameState.clickerTotal.ToString();
+                UpdateLabels();
 
             }
 
@@ -91,14 +102,22 @@ namespace WindowsFormsApp1
 
         private void BuyWormhole_Click(object sender, EventArgs e)
         {
-
+            if (gameState.CanBuy(gameState.clickerCost))
+            {
+                gameState.cookieTotal = gameState.cookieTotal - gameState.factoryCost;
+                gameState.wormholeTotal = gameState.wormholeTotal + 1;
+                UpdateLabels();
+            }
         }
-
         private void BuyFactory_Click(object sender, EventArgs e)
         {
-
+            if (gameState.CanBuy(gameState.clickerCost))
+            {
+                gameState.cookieTotal = gameState.cookieTotal - gameState.factoryCost;
+                gameState.factoryTotal = gameState.factoryTotal + 1;
+                UpdateLabels();
+            }
         }
-
         private void WormholeAmount_Click(object sender, EventArgs e)
         {
 
@@ -116,11 +135,11 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            gameState.cookieTotal = gameState.cookieTotal + 
-                (gameState.clickerTotal * GameState.clickerGives) +
-                (gameState.factoryTotal * GameState.factoryGives) +
-                (gameState.wormholeTotal * GameState.wormholeGives);
-            label1.Text = gameState.cookieTotal.ToString();
+                gameState.cookieTotal = gameState.cookieTotal +
+                    (gameState.clickerTotal * GameState.clickerGives) +
+                    (gameState.factoryTotal * GameState.factoryGives) +
+                    (gameState.wormholeTotal * GameState.wormholeGives);
+                label1.Text = gameState.cookieTotal.ToString();
 
         }
 
@@ -139,6 +158,7 @@ namespace WindowsFormsApp1
             {
                 string jsonString = File.ReadAllText(loadFileDialog1.FileName);
                 gameState = JsonSerializer.Deserialize<GameState>(jsonString);
+                UpdateLabels();
             }
         }
         private void Savebutton_Click(object sender, EventArgs e)
@@ -157,6 +177,11 @@ namespace WindowsFormsApp1
                 string jsonString = JsonSerializer.Serialize(gameState);
                 File.WriteAllText(saveFileDialog1.FileName, jsonString);
             }
+        }
+
+        private void FactoryCost_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

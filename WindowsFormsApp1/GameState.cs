@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
         {
             return (int)(((wormholeTotal * wormholeTotal) + 177.7) * 3000);
         }
-
+        
 
 
 

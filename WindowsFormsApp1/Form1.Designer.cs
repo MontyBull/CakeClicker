@@ -35,15 +35,15 @@
             this.Savebutton = new System.Windows.Forms.Button();
             this.Amount = new System.Windows.Forms.Label();
             this.ClickerAmountLabel = new System.Windows.Forms.Label();
-            this.FactoryCost = new System.Windows.Forms.Label();
-            this.WormholeCost = new System.Windows.Forms.Label();
+            this.FactoryAmountLabel = new System.Windows.Forms.Label();
+            this.WormholeAmountLabel = new System.Windows.Forms.Label();
             this.Cost = new System.Windows.Forms.Label();
             this.CookieCount = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.WormholeAmount = new System.Windows.Forms.Label();
+            this.WormholeCostLabel = new System.Windows.Forms.Label();
             this.BuyWormhole = new System.Windows.Forms.Button();
-            this.FactoryAmount = new System.Windows.Forms.Label();
+            this.FactoryCostLabel = new System.Windows.Forms.Label();
             this.BuyFactory = new System.Windows.Forms.Button();
             this.ClickerCostLabel = new System.Windows.Forms.Label();
             this.BuyClicker = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.MakeCookie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MakeCookie.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MakeCookie.Location = new System.Drawing.Point(29, 336);
+            this.MakeCookie.Location = new System.Drawing.Point(29, 358);
             this.MakeCookie.Name = "MakeCookie";
             this.MakeCookie.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.MakeCookie.Size = new System.Drawing.Size(419, 110);
@@ -76,13 +76,13 @@
             this.panel1.Controls.Add(this.Savebutton);
             this.panel1.Controls.Add(this.Amount);
             this.panel1.Controls.Add(this.ClickerAmountLabel);
-            this.panel1.Controls.Add(this.FactoryCost);
-            this.panel1.Controls.Add(this.WormholeCost);
+            this.panel1.Controls.Add(this.FactoryAmountLabel);
+            this.panel1.Controls.Add(this.WormholeAmountLabel);
             this.panel1.Controls.Add(this.Cost);
             this.panel1.Controls.Add(this.CookieCount);
-            this.panel1.Controls.Add(this.WormholeAmount);
+            this.panel1.Controls.Add(this.WormholeCostLabel);
             this.panel1.Controls.Add(this.BuyWormhole);
-            this.panel1.Controls.Add(this.FactoryAmount);
+            this.panel1.Controls.Add(this.FactoryCostLabel);
             this.panel1.Controls.Add(this.BuyFactory);
             this.panel1.Controls.Add(this.ClickerCostLabel);
             this.panel1.Controls.Add(this.BuyClicker);
@@ -116,45 +116,49 @@
             // Amount
             // 
             this.Amount.AutoSize = true;
-            this.Amount.Location = new System.Drawing.Point(-3, 233);
+            this.Amount.Location = new System.Drawing.Point(37, 233);
             this.Amount.Name = "Amount";
             this.Amount.Size = new System.Drawing.Size(43, 13);
             this.Amount.TabIndex = 13;
             this.Amount.Text = "Amount";
             this.Amount.Click += new System.EventHandler(this.label10_Click);
             // 
-            // ClickerCost
+            // ClickerAmountLabel
             // 
             this.ClickerAmountLabel.AutoSize = true;
-            this.ClickerAmountLabel.Location = new System.Drawing.Point(10, 312);
-            this.ClickerAmountLabel.Name = "ClickerCost";
+            this.ClickerAmountLabel.Location = new System.Drawing.Point(76, 311);
+            this.ClickerAmountLabel.Name = "ClickerAmountLabel";
             this.ClickerAmountLabel.Size = new System.Drawing.Size(13, 13);
             this.ClickerAmountLabel.TabIndex = 12;
             this.ClickerAmountLabel.Text = "0";
+            this.ClickerAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ClickerAmountLabel.Click += new System.EventHandler(this.ClickerCost_Click);
             // 
-            // FactoryCost
+            // FactoryAmountLabel
             // 
-            this.FactoryCost.AutoSize = true;
-            this.FactoryCost.Location = new System.Drawing.Point(10, 283);
-            this.FactoryCost.Name = "FactoryCost";
-            this.FactoryCost.Size = new System.Drawing.Size(13, 13);
-            this.FactoryCost.TabIndex = 11;
-            this.FactoryCost.Text = "0";
+            this.FactoryAmountLabel.AutoSize = true;
+            this.FactoryAmountLabel.Location = new System.Drawing.Point(76, 282);
+            this.FactoryAmountLabel.Name = "FactoryAmountLabel";
+            this.FactoryAmountLabel.Size = new System.Drawing.Size(13, 13);
+            this.FactoryAmountLabel.TabIndex = 11;
+            this.FactoryAmountLabel.Text = "0";
+            this.FactoryAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FactoryAmountLabel.Click += new System.EventHandler(this.FactoryCost_Click);
             // 
-            // WormholeCost
+            // WormholeAmountLabel
             // 
-            this.WormholeCost.AutoSize = true;
-            this.WormholeCost.Location = new System.Drawing.Point(10, 254);
-            this.WormholeCost.Name = "WormholeCost";
-            this.WormholeCost.Size = new System.Drawing.Size(13, 13);
-            this.WormholeCost.TabIndex = 10;
-            this.WormholeCost.Text = "0";
+            this.WormholeAmountLabel.AutoSize = true;
+            this.WormholeAmountLabel.Location = new System.Drawing.Point(76, 253);
+            this.WormholeAmountLabel.Name = "WormholeAmountLabel";
+            this.WormholeAmountLabel.Size = new System.Drawing.Size(13, 13);
+            this.WormholeAmountLabel.TabIndex = 10;
+            this.WormholeAmountLabel.Text = "0";
+            this.WormholeAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Cost
             // 
             this.Cost.AutoSize = true;
-            this.Cost.Location = new System.Drawing.Point(169, 234);
+            this.Cost.Location = new System.Drawing.Point(259, 233);
             this.Cost.Name = "Cost";
             this.Cost.Size = new System.Drawing.Size(28, 13);
             this.Cost.TabIndex = 9;
@@ -165,15 +169,15 @@
             // 
             this.CookieCount.Controls.Add(this.label2);
             this.CookieCount.Controls.Add(this.label1);
-            this.CookieCount.Location = new System.Drawing.Point(304, 299);
+            this.CookieCount.Location = new System.Drawing.Point(29, 345);
             this.CookieCount.Name = "CookieCount";
-            this.CookieCount.Size = new System.Drawing.Size(144, 31);
+            this.CookieCount.Size = new System.Drawing.Size(419, 31);
             this.CookieCount.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 17);
+            this.label2.Location = new System.Drawing.Point(3, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
@@ -184,26 +188,26 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 18);
+            this.label1.Location = new System.Drawing.Point(193, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "0";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // WormholeAmount
+            // WormholeCostLabel
             // 
-            this.WormholeAmount.AutoSize = true;
-            this.WormholeAmount.Location = new System.Drawing.Point(177, 254);
-            this.WormholeAmount.Name = "WormholeAmount";
-            this.WormholeAmount.Size = new System.Drawing.Size(13, 13);
-            this.WormholeAmount.TabIndex = 7;
-            this.WormholeAmount.Text = "0";
-            this.WormholeAmount.Click += new System.EventHandler(this.WormholeAmount_Click);
+            this.WormholeCostLabel.Location = new System.Drawing.Point(240, 253);
+            this.WormholeCostLabel.Name = "WormholeCostLabel";
+            this.WormholeCostLabel.Size = new System.Drawing.Size(65, 13);
+            this.WormholeCostLabel.TabIndex = 7;
+            this.WormholeCostLabel.Text = "0";
+            this.WormholeCostLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.WormholeCostLabel.Click += new System.EventHandler(this.WormholeAmount_Click);
             // 
             // BuyWormhole
             // 
-            this.BuyWormhole.Location = new System.Drawing.Point(29, 249);
+            this.BuyWormhole.Location = new System.Drawing.Point(95, 248);
             this.BuyWormhole.Name = "BuyWormhole";
             this.BuyWormhole.Size = new System.Drawing.Size(139, 23);
             this.BuyWormhole.TabIndex = 6;
@@ -211,19 +215,19 @@
             this.BuyWormhole.UseVisualStyleBackColor = true;
             this.BuyWormhole.Click += new System.EventHandler(this.BuyWormhole_Click);
             // 
-            // FactoryAmount
+            // FactoryCostLabel
             // 
-            this.FactoryAmount.AutoSize = true;
-            this.FactoryAmount.Location = new System.Drawing.Point(177, 283);
-            this.FactoryAmount.Name = "FactoryAmount";
-            this.FactoryAmount.Size = new System.Drawing.Size(13, 13);
-            this.FactoryAmount.TabIndex = 5;
-            this.FactoryAmount.Text = "0";
-            this.FactoryAmount.Click += new System.EventHandler(this.label4_Click);
+            this.FactoryCostLabel.Location = new System.Drawing.Point(240, 282);
+            this.FactoryCostLabel.Name = "FactoryCostLabel";
+            this.FactoryCostLabel.Size = new System.Drawing.Size(65, 13);
+            this.FactoryCostLabel.TabIndex = 5;
+            this.FactoryCostLabel.Text = "0";
+            this.FactoryCostLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FactoryCostLabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // BuyFactory
             // 
-            this.BuyFactory.Location = new System.Drawing.Point(29, 278);
+            this.BuyFactory.Location = new System.Drawing.Point(95, 277);
             this.BuyFactory.Name = "BuyFactory";
             this.BuyFactory.Size = new System.Drawing.Size(139, 23);
             this.BuyFactory.TabIndex = 4;
@@ -231,19 +235,19 @@
             this.BuyFactory.UseVisualStyleBackColor = true;
             this.BuyFactory.Click += new System.EventHandler(this.BuyFactory_Click);
             // 
-            // ClickerAmount
+            // ClickerCostLabel
             // 
-            this.ClickerCostLabel.AutoSize = true;
-            this.ClickerCostLabel.Location = new System.Drawing.Point(177, 312);
-            this.ClickerCostLabel.Name = "ClickerAmount";
-            this.ClickerCostLabel.Size = new System.Drawing.Size(19, 13);
+            this.ClickerCostLabel.Location = new System.Drawing.Point(240, 311);
+            this.ClickerCostLabel.Name = "ClickerCostLabel";
+            this.ClickerCostLabel.Size = new System.Drawing.Size(65, 13);
             this.ClickerCostLabel.TabIndex = 3;
             this.ClickerCostLabel.Text = "50";
+            this.ClickerCostLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ClickerCostLabel.Click += new System.EventHandler(this.ClickerAmount_Click);
             // 
             // BuyClicker
             // 
-            this.BuyClicker.Location = new System.Drawing.Point(29, 307);
+            this.BuyClicker.Location = new System.Drawing.Point(95, 306);
             this.BuyClicker.Name = "BuyClicker";
             this.BuyClicker.Size = new System.Drawing.Size(139, 23);
             this.BuyClicker.TabIndex = 2;
@@ -285,17 +289,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BuyClicker;
-        private System.Windows.Forms.Label FactoryAmount;
+        private System.Windows.Forms.Label FactoryCostLabel;
         private System.Windows.Forms.Button BuyFactory;
         private System.Windows.Forms.Label ClickerCostLabel;
         private System.Windows.Forms.Button BuyWormhole;
         private System.Windows.Forms.Panel CookieCount;
-        private System.Windows.Forms.Label WormholeAmount;
+        private System.Windows.Forms.Label WormholeCostLabel;
         private System.Windows.Forms.Label Cost;
         private System.Windows.Forms.Label Amount;
         private System.Windows.Forms.Label ClickerAmountLabel;
-        private System.Windows.Forms.Label FactoryCost;
-        private System.Windows.Forms.Label WormholeCost;
+        private System.Windows.Forms.Label FactoryAmountLabel;
+        private System.Windows.Forms.Label WormholeAmountLabel;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button Loadbutton;
         private System.Windows.Forms.Button Savebutton;
