@@ -13,6 +13,12 @@ namespace WindowsFormsApp1
         public const int wormholeGives = 2000;
         public const int factoryGives = 20;
         public const int clickerGives = 1;
+        public int cookiesPerTick()
+        {
+            return (clickerTotal * GameState.clickerGives) +
+                    (factoryTotal * GameState.factoryGives) +
+                    (wormholeTotal * GameState.wormholeGives);
+        }
 
 
         public int clickerTotal { get; set; }
@@ -43,7 +49,7 @@ namespace WindowsFormsApp1
 
         private int WormholeCostFromTotal()
         {
-            return (int)(((wormholeTotal * wormholeTotal) + 177.7) * 3000);
+            return (int)(((wormholeTotal * wormholeTotal) + 23.4) * 20000);
         }
         
 

@@ -48,6 +48,11 @@
             this.ClickerCostLabel = new System.Windows.Forms.Label();
             this.BuyClicker = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cps = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.CookieCount.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +77,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.cps);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.Loadbutton);
             this.panel1.Controls.Add(this.Savebutton);
             this.panel1.Controls.Add(this.Amount);
@@ -261,6 +271,46 @@
             this.timer1.Interval = 200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(29, 373);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(11, 95);
+            this.panel2.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(437, 373);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(11, 95);
+            this.panel3.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(29, 458);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(419, 10);
+            this.panel4.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Cookies per second:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // cps
+            // 
+            this.cps.AutoSize = true;
+            this.cps.Location = new System.Drawing.Point(104, 62);
+            this.cps.Name = "cps";
+            this.cps.Size = new System.Drawing.Size(35, 13);
+            this.cps.TabIndex = 17;
+            this.cps.Text = "label4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,6 +353,11 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button Loadbutton;
         private System.Windows.Forms.Button Savebutton;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label cps;
     }
 }
 

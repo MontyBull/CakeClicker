@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
             WormholeCostLabel.Text = gameState.wormholeCost.ToString();
             WormholeAmountLabel.Text = gameState.wormholeTotal.ToString();
             label1.Text = gameState.cookieTotal.ToString();
+            cps.Text = (gameState.cookiesPerTick() * 5).ToString();
         }
         GameState gameState = new GameState();
 
@@ -135,11 +136,9 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-                gameState.cookieTotal = gameState.cookieTotal +
-                    (gameState.clickerTotal * GameState.clickerGives) +
-                    (gameState.factoryTotal * GameState.factoryGives) +
-                    (gameState.wormholeTotal * GameState.wormholeGives);
-                label1.Text = gameState.cookieTotal.ToString();
+            gameState.cookieTotal = gameState.cookieTotal +
+            gameState.cookiesPerTick();
+            label1.Text = gameState.cookieTotal.ToString();
 
         }
 
@@ -183,5 +182,11 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
