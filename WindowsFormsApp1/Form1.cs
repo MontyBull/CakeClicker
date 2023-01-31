@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
@@ -12,22 +15,9 @@ using System.Windows.Forms;
 namespace WindowsFormsApp1
 {
 
-
-
     public partial class Form1 : Form
     {
-        int wormholecost;
- 
-        int factorycost;
-    
-        int clickercost = 50;
-        int pastclickercost = 50;
-    
-        int cookies = 0;
-        int clickers = 0;
-        int factories = 0;
-        int wormholes = 0;
-       
+        GameState gameState = new GameState();
 
         public Form1()
         {
@@ -43,8 +33,8 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cookies = cookies + 1;
-            label1.Text = cookies.ToString();
+            gameState.cookieTotal = gameState.cookieTotal + 1;
+            label1.Text = gameState.cookieTotal.ToString();
 
         }
 
@@ -68,15 +58,20 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (cookies >= clickercost){
-                clickers = clickers + 1;
-                cookies = cookies - clickercost;
-                ClickerCost.Text = clickers.ToString();
-                clickercost = pastclickercost * 2 + 25;
-                ClickerAmount.Text = clickercost.ToString();
-                pastclickercost = clickercost;
-                
-               
+            //if (cookies >= clickercost)
+            //{
+            //    clickers = clickers + 1;
+            //    cookies = cookies - clickercost;
+            //    ClickerCost.Text = clickers.ToString();
+            //    clickercost = pastclickercost * 2 + 25;
+            //    ClickerAmount.Text = clickercost.ToString();
+            //    pastclickercost = clickercost;
+            //}
+            if (gameState.CanBuy(gameState.clickerCost))
+            {
+                gameState.clickerTotal= gameState.clickerTotal + 1;
+                ClickerCostLabel.Text= gameState.clickerCost.ToString();
+                ClickerAmountLabel.Text= gameState.clickerTotal.ToString();
 
             }
 
@@ -121,9 +116,47 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            cookies = cookies + (clickers * 5) + (factories * 100) + (wormholes * 10000);
-            label1.Text = cookies.ToString();
+            gameState.cookieTotal = gameState.cookieTotal + 
+                (gameState.clickerTotal * GameState.clickerGives) +
+                (gameState.factoryTotal * GameState.factoryGives) +
+                (gameState.wormholeTotal * GameState.wormholeGives);
+            label1.Text = gameState.cookieTotal.ToString();
 
+        }
+
+        private void Loadbutton_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog loadFileDialog1 = new OpenFileDialog
+            {
+                Filter = "Save Game (*.cookie)|*.cookie",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                FileName = "cookieclickersave.cookie"
+            };
+
+            if (loadFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string jsonString = File.ReadAllText(loadFileDialog1.FileName);
+                gameState = JsonSerializer.Deserialize<GameState>(jsonString);
+            }
+        }
+        private void Savebutton_Click(object sender, EventArgs e)
+        {
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog
+            {
+                Filter = "Save Game (*.cookie)|*.cookie",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                FileName = "cookieclickersave.cookie"
+            };
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string jsonString = JsonSerializer.Serialize(gameState);
+                File.WriteAllText(saveFileDialog1.FileName, jsonString);
+            }
         }
     }
 }
