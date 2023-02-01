@@ -105,7 +105,7 @@ namespace WindowsFormsApp1
         {
             if (gameState.CanBuy(gameState.wormholeCost))
             {
-                gameState.cookieTotal = gameState.cookieTotal - gameState.factoryCost;
+                gameState.cookieTotal = gameState.cookieTotal - gameState.wormholeCost;
                 gameState.wormholeTotal = gameState.wormholeTotal + 1;
                 UpdateLabels();
             }
