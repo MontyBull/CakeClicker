@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
@@ -22,6 +23,7 @@ namespace WindowsFormsApp1
 
 
         public int clickerTotal { get; set; }
+        [JsonIgnore]
         public int clickerCost
         {
             get => ClickerCostFromTotal();
@@ -32,6 +34,7 @@ namespace WindowsFormsApp1
             return (int)(((clickerTotal * clickerTotal) + 1.7) * 30);
         }
         public int factoryTotal { get; set; }
+        [JsonIgnore]
         public int factoryCost
         {
             get => FactoryCostFromTotal();
@@ -42,6 +45,7 @@ namespace WindowsFormsApp1
             return (int)(((factoryTotal * factoryTotal) + 10.7) * 300);
         }
         public int wormholeTotal { get; set; }
+        [JsonIgnore]
         public int wormholeCost
         {
             get => WormholeCostFromTotal();

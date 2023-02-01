@@ -103,7 +103,7 @@ namespace WindowsFormsApp1
 
         private void BuyWormhole_Click(object sender, EventArgs e)
         {
-            if (gameState.CanBuy(gameState.clickerCost))
+            if (gameState.CanBuy(gameState.wormholeCost))
             {
                 gameState.cookieTotal = gameState.cookieTotal - gameState.factoryCost;
                 gameState.wormholeTotal = gameState.wormholeTotal + 1;
@@ -112,7 +112,7 @@ namespace WindowsFormsApp1
         }
         private void BuyFactory_Click(object sender, EventArgs e)
         {
-            if (gameState.CanBuy(gameState.clickerCost))
+            if (gameState.CanBuy(gameState.factoryCost))
             {
                 gameState.cookieTotal = gameState.cookieTotal - gameState.factoryCost;
                 gameState.factoryTotal = gameState.factoryTotal + 1;
